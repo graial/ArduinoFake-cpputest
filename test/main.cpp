@@ -1,7 +1,7 @@
 // clang-format off
 #include <Arduino.h>
 #include <cstdlib>
-#include <unity.h>
+#include "CppUTest/TestHarness.h"
 
 using namespace fakeit;
 

@@ -10,7 +10,7 @@ foreach(filename ${cpp_test_files})
     add_executable(${target} ${filename})
 
     set_target_properties(${target} PROPERTIES DEBUG_POSTFIX "-d")
-    target_link_libraries(${target} ${PROJECT_NAME} unity)
+    target_link_libraries(${target} ${PROJECT_NAME} cpputest)
     add_test(NAME ${target} COMMAND ${target})
 
 endforeach(filename)

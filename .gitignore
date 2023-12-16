@@ -2,6 +2,7 @@
 .piolibdeps
 /external/unity/*-repo/
 /external/fakeit/*-repo/
+/external/cpputest/*-repo/
 /build/
 /.cproject
 /.project

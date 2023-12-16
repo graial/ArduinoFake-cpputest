@@ -9,6 +9,7 @@ LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 # Include external libs
 add_subdirectory(external/fakeit)
 add_subdirectory(external/unity)
+add_subdirectory(external/cpputest)
 
 # Targets that we develop here
 enable_testing()
