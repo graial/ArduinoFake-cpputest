@@ -1,3 +1,16 @@
+# ArduinoFake with cpputest
+
+Forked in order to try to get a clean build using or ArduinoFake using cpputest to hopefully resolve the following:
+
+ - https://github.com/FabioBatSilva/ArduinoFake/issues/56
+ - https://github.com/cpputest/cpputest/issues/1768
+
+to run: `make`
+
+Issues:
+ - While the original is built using `pio test`, This fails
+ - I didn't translate any of the setup or assertions from unity to cpputest
+
 # ArduinoFake
 
 [![Build Status](https://travis-ci.org/FabioBatSilva/ArduinoFake.svg?branch=master)](https://travis-ci.org/FabioBatSilva/ArduinoFake)
