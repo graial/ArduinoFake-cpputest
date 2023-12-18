@@ -5,6 +5,8 @@ Forked in order to try to get a clean build using or ArduinoFake using cpputest 
  - https://github.com/FabioBatSilva/ArduinoFake/issues/56
  - https://github.com/cpputest/cpputest/issues/1768
 
+Currently it fails on the same issue
+
 to run: 
 `cmake CMakeLists.txt`
 `make`
