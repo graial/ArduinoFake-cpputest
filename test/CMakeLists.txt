@@ -1,4 +1,6 @@
 include_directories(../src)
+include_directories(../external/cpputest/cpputest-repo/include)
+link_directories(../external/cpputest)
 
 file(GLOB cpp_test_files *.cpp)
 
@@ -10,7 +12,7 @@ foreach(filename ${cpp_test_files})
     add_executable(${target} ${filename})
 
     set_target_properties(${target} PROPERTIES DEBUG_POSTFIX "-d")
-    target_link_libraries(${target} ${PROJECT_NAME} cpputest)
+    target_link_libraries(${target} ${PROJECT_NAME} CppUTest CppUTestExt)
     add_test(NAME ${target} COMMAND ${target})
 
 endforeach(filename)

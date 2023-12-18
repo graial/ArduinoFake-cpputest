@@ -11,10 +11,30 @@ download_repo(
     CLONE_DIR ${REPO_DIR}
 )
 
-add_library(${PROJECT_NAME} STATIC
+add_library(CppUTest
+    ${REPO_DIR}/src/CppUTest/CommandLineArguments.cpp
+    ${REPO_DIR}/src/CppUTest/MemoryLeakWarningPlugin.cpp
+    ${REPO_DIR}/src/CppUTest/TestHarness_c.cpp
+    ${REPO_DIR}/src/CppUTest/TestRegistry.cpp
+    ${REPO_DIR}/src/CppUTest/CommandLineTestRunner.cpp
+    ${REPO_DIR}/src/CppUTest/SimpleString.cpp
+    ${REPO_DIR}/src/CppUTest/SimpleStringInternalCache.cpp
+    ${REPO_DIR}/src/CppUTest/TestMemoryAllocator.cpp
+    ${REPO_DIR}/src/CppUTest/TestResult.cpp
+    ${REPO_DIR}/src/CppUTest/JUnitTestOutput.cpp
+    ${REPO_DIR}/src/CppUTest/TeamCityTestOutput.cpp
+    ${REPO_DIR}/src/CppUTest/TestFailure.cpp
+    ${REPO_DIR}/src/CppUTest/TestOutput.cpp
+    ${REPO_DIR}/src/CppUTest/MemoryLeakDetector.cpp
+    ${REPO_DIR}/src/CppUTest/TestFilter.cpp
+    ${REPO_DIR}/src/CppUTest/TestPlugin.cpp
+    ${REPO_DIR}/src/CppUTest/TestTestingFixture.cpp
+    ${REPO_DIR}/src/CppUTest/TestTestingFixture.cpp
+    ${REPO_DIR}/src/CppUTest/SimpleMutex.cpp
     ${REPO_DIR}/src/CppUTest/Utest.cpp
+    ${REPO_DIR}/src/Platforms/Gcc/UtestPlatform.cpp
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC
+target_include_directories(CppUTest PUBLIC
     ${REPO_DIR}/include
 )
