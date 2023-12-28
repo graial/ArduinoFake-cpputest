@@ -12,3 +12,11 @@ to run:
  - `cmake ..`
  - `cmake --build .`
  - `./first_test`
+
+the comment out the `#include "ArduinoFake.h"
+` on line 4 of *MyFirstTest.cpp*, rebuild and re-run via:
+
+- `cmake --build .`
+ - `./first_test`
+
+ and watch the test-runner complete successfully
