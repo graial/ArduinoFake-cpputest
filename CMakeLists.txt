@@ -1,18 +1,36 @@
-cmake_minimum_required(VERSION 3.2.2)
-project(ArduinoFake VERSION 0.1)
+cmake_minimum_required(VERSION 3.5)
+project(all_tests VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
+# CppUTest
+include(FetchContent)
+FetchContent_Declare(
+    CppUTest
+    GIT_REPOSITORY https://github.com/cpputest/cpputest.git
+    GIT_TAG        master # or use release tag, eg. v4.0
+)
+# Set this to ON if you want to have the CppUTests in your project as well.
+set(TESTS OFF CACHE BOOL "Switch off CppUTest Test build")
+FetchContent_MakeAvailable(CppUTest)
 
-# Include external libs
-add_subdirectory(external/fakeit)
-add_subdirectory(external/unity)
-add_subdirectory(external/cpputest)
 
-# Targets that we develop here
-enable_testing()
+# ArduinoFake
+FetchContent_Declare(
+    ArduinoFake
+    GIT_REPOSITORY https://github.com/FabioBatSilva/ArduinoFake.git
+    GIT_TAG        master # or use release tag, eg. v4.0
+)
+FetchContent_MakeAvailable(ArduinoFake)
 
-add_subdirectory(src)
-add_subdirectory(test)
+add_executable(first_test AllTests.cpp MyFirstTest.cpp)
+
+target_link_libraries(first_test PRIVATE
+    CppUTest::CppUTest
+    CppUTest::CppUTestExt
+    ArduinoFake)
+
+target_include_directories(first_test PUBLIC
+  "build/_deps/arduinofake-src/src"
+)
