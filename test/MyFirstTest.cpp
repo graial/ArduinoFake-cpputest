@@ -4,6 +4,8 @@
 //Compile error Failure occurs when uncommenting this line
 // #include "ArduinoFake.h"
 
+// using namespace fakeit;
+
 extern "C"
 {
     /*
@@ -15,6 +17,11 @@ TEST_GROUP(MyCode)
 {
     void setup()
     {
+        // When(Method(ArduinoFake(), pinMode)).Return();
+
+        // setup();
+
+        // Verify(Method(ArduinoFake(), pinMode).Using(LED_BUILTIN, OUTPUT)).Once();
     }
 
     void teardown()
