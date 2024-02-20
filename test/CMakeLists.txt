@@ -15,11 +15,19 @@ FetchContent_Declare(
 set(TESTS OFF CACHE BOOL "Switch off CppUTest Test build")
 FetchContent_MakeAvailable(CppUTest)
 
+# FakeIt
+FetchContent_Declare(
+    FakeIt
+    GIT_REPOSITORY https://github.com/eranpeer/FakeIt.git
+    GIT_TAG    master
+)
+FetchContent_MakeAvailable(FakeIt)
+
 # ArduinoFake
 FetchContent_Declare(
     ArduinoFake
     GIT_REPOSITORY https://github.com/FabioBatSilva/ArduinoFake.git
-    GIT_TAG        master # or use release tag, eg. v4.0
+    GIT_TAG    master
 )
 FetchContent_MakeAvailable(ArduinoFake)
 
@@ -28,9 +36,11 @@ add_executable(first_test AllTests.cpp MyFirstTest.cpp)
 target_link_libraries(first_test PRIVATE
     CppUTest::CppUTest
     CppUTest::CppUTestExt
-    ArduinoFake)
+    ArduinoFake
+    FakeIt-standalone)
 
 target_include_directories(first_test PUBLIC
     "build/_deps/arduinofake-src/src"
+    "build/_deps/fakeit-src/include/fakeit"
     "includes"
 )

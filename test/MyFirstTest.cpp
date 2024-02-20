@@ -1,11 +1,6 @@
 #include "MyMemoryLeakDetectorNewMacrosFile.h"
 #include "CppUTest/TestHarness.h"
 
-//Compile error Failure occurs when uncommenting this line
-// #include "ArduinoFake.h"
-
-// using namespace fakeit;
-
 extern "C"
 {
     /*
