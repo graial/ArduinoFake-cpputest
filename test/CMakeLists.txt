@@ -15,7 +15,6 @@ FetchContent_Declare(
 set(TESTS OFF CACHE BOOL "Switch off CppUTest Test build")
 FetchContent_MakeAvailable(CppUTest)
 
-
 # ArduinoFake
 FetchContent_Declare(
     ArduinoFake
@@ -32,5 +31,6 @@ target_link_libraries(first_test PRIVATE
     ArduinoFake)
 
 target_include_directories(first_test PUBLIC
-  "build/_deps/arduinofake-src/src"
+    "build/_deps/arduinofake-src/src"
+    "includes"
 )
