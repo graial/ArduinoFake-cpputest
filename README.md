@@ -8,7 +8,7 @@ Minimal example demonstrating the error encountered when trying to include Ardui
 Currently it fails on the same issue
 
 to run: 
- - `mkdir build && cd build`
+ - `mkdir test/build && cd test/build`
  - `cmake ..`
  - `cmake --build .`
  - `./first_test`
