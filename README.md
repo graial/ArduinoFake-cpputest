@@ -13,7 +13,7 @@ to run:
  - `cmake --build .`
  - `./first_test`
 
-To see the error, uncomment any of the 3 `#include"` statements in *test/includes/MyMemoryLeakDetectorNewMacrosFile.h*, rebuild and re-run via:
+To see the error, uncomment any of the 3 `#include` statements in *test/includes/MyMemoryLeakDetectorNewMacrosFile.h*, rebuild and re-run via:
 
 - `cmake --build .`
  - `./first_test`
