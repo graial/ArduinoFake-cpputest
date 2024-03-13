@@ -33,14 +33,20 @@ FetchContent_MakeAvailable(ArduinoFake)
 
 add_executable(first_test AllTests.cpp MyFirstTest.cpp)
 
-target_link_libraries(first_test PRIVATE
-    CppUTest::CppUTest
-    CppUTest::CppUTestExt
-    ArduinoFake
-    FakeIt-standalone)
-
 target_include_directories(first_test PUBLIC
     "build/_deps/arduinofake-src/src"
     "build/_deps/fakeit-src/include/fakeit"
     "includes"
+)
+
+target_compile_options(first_test PUBLIC
+    "$<$<COMPILE_LANGUAGE:C,CXX>:-includeMyMemoryLeakDetectorNewMacrosFile.h>"
+    "$<$<COMPILE_LANGUAGE:CXX>:-includeMyMemoryLeakDetectorNewMacrosFile.h>"
+)
+
+target_link_libraries(first_test PRIVATE
+    CppUTest::CppUTest
+    CppUTest::CppUTestExt
+    ArduinoFake
+    FakeIt-standalone
 )
