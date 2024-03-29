@@ -8,4 +8,4 @@ to run:
  - `cmake --build .`
  - `./first_test`
 
-The example currently fails because it appears to be trying to call `loop` from `fakeit` rather than `src/blink.cpp`
+The example currently fails with 'fakeit::UnexpectedMethodCallException' because it is apparently trying to call `loop()` from `fakeit` rather than `src/blink.cpp`
