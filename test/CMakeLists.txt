@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 project(all_tests VERSION 0.1)
 
+file(GLOB cpp_test_files *.cpp)
+add_definitions(-DUNIT_TEST)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -31,7 +34,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(ArduinoFake)
 
-add_executable(first_test AllTests.cpp MyFirstTest.cpp)
+add_executable(first_test AllTests.cpp MyFirstTest.cpp ../../src/blink.cpp)
 
 target_include_directories(first_test PUBLIC
     "build/_deps/arduinofake-src/src"
@@ -45,8 +48,8 @@ target_compile_options(first_test PUBLIC
 )
 
 target_link_libraries(first_test PRIVATE
-    CppUTest::CppUTest
-    CppUTest::CppUTestExt
     ArduinoFake
     FakeIt-standalone
+    CppUTest::CppUTest
+    CppUTest::CppUTestExt
 )
