@@ -52,7 +52,7 @@ target_compile_options(first_test PUBLIC
 )
 
 target_link_libraries(first_test PRIVATE
-#    ${CMAKE_CURRENT_SOURCE_DIR}/blink.o  # if I uncomment this, I get a multiple redefinition error
+   ${CMAKE_CURRENT_SOURCE_DIR}/objs/blink.o  # if I uncomment this, I get a multiple redefinition error
     ArduinoFake
     FakeIt-standalone
     CppUTest::CppUTest
